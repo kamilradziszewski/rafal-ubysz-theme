@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="article-h1">{{post.title}}</h1>
+				<div class="article-body">
+					{# {{post.content}} #}
+					<h1>Rafał Ubysz</h1>
+					<a href="tel:+48{{ post.telephone|replace({' ':''}) }}">{{ post.telephone }}</a>
+					<a href="mailto:{{ post.email }}">{{ post.email }}</a>
+					{% include 'partial/addresses.twig' with { 'hours': true } %}
+				</div>
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

@@ -42,6 +42,12 @@ class StarterSite extends TimberSite {
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
+
+		$args = array(
+		'post_type' => 'addresses'
+		);
+		$context['addresses'] = Timber::get_posts( $args );
+		
 		return $context;
 	}
 

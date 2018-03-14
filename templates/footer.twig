@@ -1,1 +1,5 @@
-Copyright {{"now"|date('Y')}}
+{# Copyright {{"now"|date('Y')}} #}
+
+{% if post.slug != 'kontakt' %}
+  {% include 'partial/addresses.twig' with { 'hours': false } %}
+{% endif %}
