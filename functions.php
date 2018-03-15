@@ -44,7 +44,9 @@ class StarterSite extends TimberSite {
 		$context['site'] = $this;
 
 		$args = array(
-		'post_type' => 'addresses'
+		'post_type' => 'addresses',
+		'order' => 'ASC',
+		'orderby' => 'menu_order'
 		);
 		$context['addresses'] = Timber::get_posts( $args );
 		
@@ -66,3 +68,23 @@ class StarterSite extends TimberSite {
 }
 
 new StarterSite();
+
+
+
+
+
+/***************************************************************************
+ * Enqueue scripts and styles
+ */
+function rafal_ubysz_scripts() {
+	// wp_enqueue_style( 'rafal-ubysz-style', get_stylesheet_uri() );
+	// wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i&amp;subset=latin-ext' );
+	wp_enqueue_style( 'rafal-ubysz-main', get_template_directory_uri() . '/static/dist/css/main.css' );
+	wp_enqueue_script( 'main',
+										 get_template_directory_uri() . '/static/dist/js/main.js',
+										 false,
+										 false,
+										 true );
+}
+
+add_action( 'wp_enqueue_scripts', 'rafal_ubysz_scripts' );
