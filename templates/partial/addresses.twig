@@ -1,37 +1,39 @@
 {% for address in addresses %}
-  <h4>{{ address.title }}</h4>
-  
-  {% if address.additional_info_name %}
-    {{ address.additional_info_name }}
-  {% endif %}
+  <div class="address">
+    <h4>{{ address.title }}</h4>
+    
+    {% if address.additional_info_name %}
+      {{ address.additional_info_name }}
+    {% endif %}
 
-  {{ address.street }}
+    {{ address.street }}
 
-  {% if address.telephone_1 %}
-    <a href="tel:+48{{ address.telephone_1|replace({' ':''}) }}">{{ address.telephone_1 }}</a>
-  {% endif %}
+    {% if address.telephone_1 %}
+      <a href="tel:+48{{ address.telephone_1|replace({' ':''}) }}">{{ address.telephone_1 }}</a>
+    {% endif %}
 
-  {% if address.telephone_2 %}
-    <a href="tel:+48{{ address.telephone_2|replace({' ':''}) }}">{{ address.telephone_2 }}</a>
-  {% endif %}
+    {% if address.telephone_2 %}
+      <a href="tel:+48{{ address.telephone_2|replace({' ':''}) }}">{{ address.telephone_2 }}</a>
+    {% endif %}
 
-  {% if address.webpage %}
-    <a href="{% if '://' not in address.webpage %}https://{% endif %}{{ address.webpage }}" target="_blank">
-      {% if address.webpage matches '{^http://|^https://}' %}
-        {{ address.webpage|replace({'http://':'', 'https://':''}) }}
-      {% else %}
-        {{ address.webpage }}
+    {% if address.webpage %}
+      <a href="{% if '://' not in address.webpage %}https://{% endif %}{{ address.webpage }}" target="_blank" class="webpage">
+        {% if address.webpage matches '{^http://|^https://}' %}
+          {{ address.webpage|replace({'http://':'', 'https://':''}) }}
+        {% else %}
+          {{ address.webpage }}
+        {% endif %}
+      </a>
+    {% endif %}
+
+    {% if hours %}
+      {% if address.opening_hours_1 %}
+        {{ address.opening_hours_1|replace({'-':'–'}) }}
       {% endif %}
-    </a>
-  {% endif %}
-
-  {% if hours %}
-    {% if address.opening_hours_1 %}
-      {{ address.opening_hours_1|replace({'-':'–'}) }}
+      {% if address.opening_hours_2 %}
+        {{ address.opening_hours_2|replace({'-':'–'}) }}
+      {% endif %}
     {% endif %}
-    {% if address.opening_hours_2 %}
-      {{ address.opening_hours_2|replace({'-':'–'}) }}
-    {% endif %}
-  {% endif %}
+  </div>
 
 {% endfor %}

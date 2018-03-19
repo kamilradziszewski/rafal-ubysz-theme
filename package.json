@@ -10,11 +10,12 @@
     "compile-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js static/src/sass/main.sass static/dist/css/main.css",
     "postcss": "postcss --use autoprefixer --base 'last 2 versions' --use cssnano --replace ./static/dist/css/main.css --map",
     "build:css": "npm run compile-sass && npm run postcss",
-    "copy-files": "npm run images:copy && npm run js:copy",
+    "copy-files": "npm run images:copy && npm run js:copy && npm run fonts:copy",
     "images:copy": "copyfiles -u 3 './static/src/img/**/*' './static/dist/img/' && npm run images:optimize && npm run images:create-sprite",
     "images:optimize": "svgo -f './static/dist/img'",
     "images:create-sprite": "svgstore -o static/dist/img/icons-sprite.svg static/dist/img/*.svg",
-    "js:copy": "copyfiles -f './static/src/js/**/*' './static/dist/js/'"
+    "js:copy": "copyfiles -f './static/src/js/**/*' './static/dist/js/'",
+    "fonts:copy": "copyfiles -f './static/src/fonts/**/*' './static/dist/fonts/'"
   },
   "author": "Kamil Radziszewski",
   "license": "MIT",
