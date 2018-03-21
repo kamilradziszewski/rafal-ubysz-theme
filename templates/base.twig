@@ -9,13 +9,28 @@
 	<body class="{{body_class}}" data-template="base.twig">
 		<header class="header" >
 			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
-						{% include "menu.twig" with {'menu': menu.get_items} %}
-					</nav><!-- #nav -->
+				<div class="wrapper row column">
+					<div class="top-bar">
+
+						<div class="top-bar-left">
+							<a class="hdr-logo" href="{{site.url}}" rel="home">
+								<svg class="logo">
+									<use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#logo"></use>
+								</svg>
+								<h1 class="hdr-logo-link">
+									<span>Rafał Ubysz</span>
+									<span>Ultrasonografia</span>
+								</h1>
+							</a>
+						</div>
+
+						<div class="top-bar-right">
+							<nav id="nav-main" class="nav-main" role="navigation">
+								{% include "menu.twig" with {'menu': menu.get_items} %}
+							</nav><!-- #nav -->
+						</div>
+
+					</div>
 				</div>
 			{% endblock %}
 		</header>

@@ -1,5 +1,6 @@
 {# Copyright {{"now"|date('Y')}} #}
-
-{% if post.slug != 'kontakt' %}
-  {% include 'partial/addresses.twig' with { 'hours': false } %}
-{% endif %}
+<div class="wrapper row column">
+  {% if post.slug != 'kontakt' %}
+    {% include 'partial/addresses.twig' with { 'hours': false } %}
+  {% endif %}
+</div>

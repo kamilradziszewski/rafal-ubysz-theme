@@ -1,10 +1,70 @@
-// header
-//   position: relative
+header
+  background-color: $white
+  .menu
+    justify-content: center
+    @include breakpoint(medium)
+      justify-content: initial
+    .current-menu-item
+      a
+        color: $pink
+        font-weight: bold
+    a
+      padding: 0.7rem
+      @include breakpoint(480px)
+        padding: 1rem
+      @include breakpoint(large)
+        padding: 1rem 1.5rem
+  .top-bar
+    transition: all 0.2s ease-in-out
+    text-transform: uppercase
+    padding: 1rem 0 0.75rem
+    background-color: $white
+    color: $black
+    a
+      transition: all 0.2s ease-in-out
+      color: $black
+      font-size: 1.2rem
+      &::after
+        content: none
+      @include breakpoint(medium)
+        font-size: 1.3rem
+        font-weight: normal
+      @include breakpoint(large)
+        font-size: 1.5rem
+    ul
+      background-color: $white
+  .top-bar-left
+    padding-bottom: 0.3rem
+    @include breakpoint(medium)
+      padding-bottom: 0
+  .top-bar-right
+    a
+      &:hover,
+      &:focus
+        color: $pink
+  .hdr-logo
+    display: inline-block
+    line-height: 0
+  .logo
+    width: 4.65rem
+    height: 2.5rem
+  .hdr-logo-link
+    display: inline-block
+    position: relative
+    top: -0.25rem
+    padding-left: 1rem
+    line-height: 1rem
+    font-size: 0.69rem
+    margin: 0
+    span
+      display: block
+      &:first-of-type
+        font-size: 1rem
 
 // #nav-main
 //   text-align: center
 
-//   .menu
+  // .menu
 //     padding: 0.5rem 0 1rem
 //     display: inline-block
 //     @include breakpoint(medium)
