@@ -1,0 +1,44 @@
+#content
+  background-image: url("../img/bg_img.jpg")
+  background-repeat: no-repeat
+  background-size: 110%
+  background-position: 50% 0
+
+.article-content
+  background-color: $white
+  border-radius: 0.4rem
+  margin-top: 3rem
+  margin-bottom: 3rem
+  padding: 1rem
+  @include breakpoint(medium)
+    margin-top: 4rem
+    margin-bottom: 4rem
+    padding: 1.5rem
+  @include breakpoint(large)
+    margin-top: 6rem
+    margin-bottom: 6rem
+    padding: 2.2rem
+    font-size: 110%
+  .article-h1
+    font-size: 0
+  h2
+    font-size: 1.4rem
+  ul
+    list-style-type: none
+    padding: 0
+  .article-body
+    &.uslugi
+      li
+        @include list-checkbox
+    &:not(.uslugi)
+      li
+        @include list-dot
+    &.home
+      a
+        text-decoration: underline
+        color: $black
+        font-weight: normal
+        transition: color 0.2s
+        &:hover,
+        &:focus
+          color: $pink
