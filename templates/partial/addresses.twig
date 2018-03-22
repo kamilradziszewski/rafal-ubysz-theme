@@ -1,39 +1,50 @@
 {% for address in addresses %}
-  <div class="address">
-    <h4>{{ address.title }}</h4>
-    
-    {% if address.additional_info_name %}
-      {{ address.additional_info_name }}
-    {% endif %}
+  {% set adr_len = addresses|length %}
 
-    {{ address.street }}
-
-    {% if address.telephone_1 %}
-      <a href="tel:+48{{ address.telephone_1|replace({' ':''}) }}">{{ address.telephone_1 }}</a>
-    {% endif %}
-
-    {% if address.telephone_2 %}
-      <a href="tel:+48{{ address.telephone_2|replace({' ':''}) }}">{{ address.telephone_2 }}</a>
-    {% endif %}
-
-    {% if address.webpage %}
-      <a href="{% if '://' not in address.webpage %}https://{% endif %}{{ address.webpage }}" target="_blank" class="webpage">
-        {% if address.webpage matches '{^http://|^https://}' %}
-          {{ address.webpage|replace({'http://':'', 'https://':''}) }}
-        {% else %}
-          {{ address.webpage }}
-        {% endif %}
-      </a>
-    {% endif %}
-
-    {% if hours %}
-      {% if address.opening_hours_1 %}
-        {{ address.opening_hours_1|replace({'-':'–'}) }}
+  {% if footer %}
+    <div class="columns small-12">
+  {% else %}
+    <div class="columns">
+    {# {{ address.map }} #}
+  {% endif %}
+    <div class="address">
+      <h3 class="address-title">{{ address.title }}</h3>
+      
+      {% if address.additional_info %}
+        <p>{{ address.additional_info }}</p>
       {% endif %}
-      {% if address.opening_hours_2 %}
-        {{ address.opening_hours_2|replace({'-':'–'}) }}
+
+      <p>{{ address.street }}<p>
+
+      {% if address.telephone_1 %}
+        <p><a class="address-telephone" href="tel:+48{{ address.telephone_1|replace({' ':''}) }}">Tel. {{ address.telephone_1 }}</a></p>
       {% endif %}
-    {% endif %}
+
+      {% if address.telephone_2 %}
+        <p><a class="address-telephone" href="tel:+48{{ address.telephone_2|replace({' ':''}) }}">Tel. {{ address.telephone_2 }}</a></p>
+      {% endif %}
+
+      {% if address.webpage %}
+        <a class="address-webpage" href="{% if '://' not in address.webpage %}https://{% endif %}{{ address.webpage }}" target="_blank" class="webpage">
+          {% if address.webpage matches '{^http://|^https://}' %}
+            {{ address.webpage|replace({'http://':'', 'https://':''}) }}
+          {% else %}
+            {{ address.webpage }}
+          {% endif %}
+        </a>
+      {% endif %}
+
+      {% if hours %}
+        <div class="address-opening-hours">
+          {% if address.opening_hours_1 %}
+            <p>{{ address.opening_hours_1|replace({'-':'–'}) }}</p>
+          {% endif %}
+          {% if address.opening_hours_2 %}
+            <p>{{ address.opening_hours_2|replace({'-':'–'}) }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
   </div>
-
+  
 {% endfor %}

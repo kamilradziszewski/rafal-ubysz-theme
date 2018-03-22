@@ -1,7 +1,41 @@
 footer
   background-color: $white
-//   padding: 3rem 0 1.5rem
-//   text-align: center
-//   font-size: 0.7rem
-//   @include breakpoint(medium)
-//     padding-top: 4rem
+  padding: 2rem 0
+  *
+    font-size: 95%
+    line-height: 1.3
+  .columns
+    @include breakpoint(768px)
+      @include flex-grid-column(shrink)
+  .icon-map-column
+    @include breakpoint(medium down)
+      display: none
+  .icon-map
+    fill: lighten($black, 15)
+    width: 3rem
+    height: 3rem
+    margin: 1rem
+  .copyright
+    font-size: 0.7rem
+    text-align: center
+    text-transform: uppercase
+    line-height: 1rem
+    margin: 0
+  .dividing-line
+    margin: 2rem auto 2.5rem
+    @include breakpoint(medium down)
+      width: 80%
+      height: 1px
+      background-color: darken($white, 10)
+  .address
+    @include breakpoint(large)
+      margin: 0 1rem
+
+// .abc
+//   .columns
+//     border: 1px dotted grey
+//     @include breakpoint(medium)
+//       @include flex-grid-column(shrink)
+//   .icon-map-cell
+//     @include breakpoint(small down)
+//       display: none

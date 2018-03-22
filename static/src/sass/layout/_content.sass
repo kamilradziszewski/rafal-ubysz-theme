@@ -3,21 +3,22 @@
   background-repeat: no-repeat
   background-size: 100%
   background-position: 50% 0
+  @include breakpoint(medium only)
+    min-height: calc(100vh - 161px)
+  @include breakpoint(large)
+    min-height: calc(100vh - 164px)
 
 .article-content
   background-color: $white
   border-radius: 0.4rem
   margin-top: 3rem
   margin-bottom: 3rem
-  padding: 1rem
   @include breakpoint(medium)
     margin-top: 4rem
     margin-bottom: 4rem
-    padding: 1.5rem
   @include breakpoint(large)
     margin-top: 6rem
     margin-bottom: 6rem
-    padding: 2.2rem
     font-size: 110%
   .article-h1
     font-size: 0
@@ -27,6 +28,10 @@
     list-style-type: none
     padding: 0
   .article-body
+    @include breakpoint(medium)
+      padding: 1rem
+    @include breakpoint(large)
+      padding: 1.5rem
     &.uslugi
       li
         @include list-checkbox

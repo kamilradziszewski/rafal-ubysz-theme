@@ -1,6 +1,17 @@
-{# Copyright {{"now"|date('Y')}} #}
-<div class="wrapper row column">
+<div class="wrapper">
   {% if post.slug != 'kontakt' %}
-    {% include 'partial/addresses.twig' with { 'hours': false } %}
+    <div class="row align-center">
+      <div class="columns small-12 icon-map-column">
+        <svg class="icon-map">
+          <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-map"></use>
+        </svg>
+      </div>
+      {% include 'partial/addresses.twig' with { 'hours': false, 'footer': true } %}
+    </div>
+    <div class="dividing-line"></div>
   {% endif %}
 </div>
+
+<p class="copyright">
+  Copyright {{"now"|date('Y')}} Rafał Ubysz
+</p>
