@@ -86,8 +86,8 @@ function rafal_ubysz_scripts_and_styles() {
 											false,
 											true );
 
-	wp_enqueue_script(	'acf-googlemaps',
-											get_stylesheet_directory_uri() . '/static/dist/js/googlemaps.js',
+	wp_enqueue_script(	'main-js',
+											get_stylesheet_directory_uri() . '/static/dist/js/main.min.js',
 											array('jquery'),
 											false,
 											true );
