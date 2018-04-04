@@ -5,7 +5,9 @@
     <div class="columns small-12">
   {% else %}
     <div class="columns">
-    {# {{ address.map }} #}
+      <div class="acf-map">
+        <div class="marker" data-lat="{{ address.map['lat'] }}" data-lng="{{ address.map['lng'] }}"></div>
+      </div>
   {% endif %}
     <div class="address">
       <h3 class="address-title">{{ address.title }}</h3>
