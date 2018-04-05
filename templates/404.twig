@@ -1,5 +1,11 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+<div class="content-wrapper">
+	<article class="post-type-{{post.post_type}} row align-center" id="post-{{post.ID}}">
+		<section class="article-content columns small-11 medium-8 large-9">
+			<P class="message-404">Strona o podanym adresie nie istnieje.</P>
+		</section>
+	</article>
+</div>
 {% endblock %}
