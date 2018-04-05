@@ -1,8 +1,8 @@
 #content
   background-image: url("../img/bg_img.jpg")
+  background-position: 50% 0
   background-repeat: no-repeat
   background-size: 100%
-  background-position: 50% 0
   @include breakpoint(medium only)
     min-height: calc(100vh - 349px)
   @include breakpoint(large)
@@ -11,15 +11,15 @@
 .article-content
   background-color: $white
   border-radius: 0.4rem
-  margin-top: 3rem
   margin-bottom: 3rem
+  margin-top: 3rem
   @include breakpoint(medium)
-    margin-top: 4rem
     margin-bottom: 4rem
+    margin-top: 4rem
   @include breakpoint(large)
-    margin-top: 6rem
-    margin-bottom: 6rem
     font-size: 110%
+    margin-bottom: 6rem
+    margin-top: 6rem
   .article-h1
     font-size: 0
   h2
@@ -40,9 +40,9 @@
         @include list-dot
     &.home
       a
-        text-decoration: underline
         color: $black
         font-weight: normal
+        text-decoration: underline
         transition: color 0.2s
         &:hover,
         &:focus

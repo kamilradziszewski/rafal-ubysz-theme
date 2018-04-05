@@ -15,15 +15,15 @@ header
       @include breakpoint(large)
         padding: 1rem 1.5rem
   .top-bar
-    transition: all 0.2s ease-in-out
-    text-transform: uppercase
-    padding: 1rem 0 0.75rem
     background-color: $white
     color: $black
+    padding: 1rem 0 0.75rem
+    text-transform: uppercase
+    transition: all 0.2s ease-in-out
     a
-      transition: all 0.2s ease-in-out
       color: $black
       font-size: 1.2rem
+      transition: all 0.2s ease-in-out
       &::after
         content: none
       @include breakpoint(medium)
@@ -46,42 +46,17 @@ header
     display: inline-block
     line-height: 0
   .logo
-    width: 4.65rem
     height: 2.5rem
+    width: 4.65rem
   .hdr-logo-link
     display: inline-block
+    font-size: 0.69rem
+    line-height: 1rem
+    margin: 0
+    padding-left: 1rem
     position: relative
     top: -0.25rem
-    padding-left: 1rem
-    line-height: 1rem
-    font-size: 0.69rem
-    margin: 0
     span
       display: block
       &:first-of-type
         font-size: 1rem
-
-// #nav-main
-//   text-align: center
-
-  // .menu
-//     padding: 0.5rem 0 1rem
-//     display: inline-block
-//     @include breakpoint(medium)
-//       padding-top: 2rem
-//       padding-bottom: 3rem
-//     @include breakpoint(large)
-//       padding-bottom: 4rem
-      
-//   .menu-item
-//     font-weight: $bold
-//     text-transform: uppercase
-//     font-size: 1.3rem
-//     display: inline-block
-
-//   .current-menu-item
-//     a
-//       color: $red
-
-//   a
-//     padding: 0.7rem

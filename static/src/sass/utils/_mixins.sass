@@ -1,37 +1,37 @@
 @mixin list-dot
   display: inline
-  position: relative
   padding-left: 1em
+  position: relative
   &::before
-    content: ""
     background-color: #f61660
-    width: 6px
-    height: 6px
-    display: inline
-    position: absolute
-    left: 0
-    top: 0.3em
     border-radius: 50%
+    content: ""
+    display: inline
+    height: 6px
+    left: 0
+    position: absolute
+    top: 0.3em
+    width: 6px
   &::after
     content: ""
     display: block
 
 @mixin list-checkbox
-  position: relative
   display: inline
   padding-left: 1.6em
+  position: relative
   &::before
-    content: ""
-    background: url('../img/icon-check-mark.svg')
+    background-image: url('../img/icon-check-mark.svg')
     background-repeat: no-repeat
     background-size: cover
-    width: 16px
-    height: 16px
-    position: absolute
+    content: ""
     display: inline
-    top: 0
+    height: 16px
     left: 0
     opacity: 0.8
+    position: absolute
+    top: 0
+    width: 16px
   &::after
     content: ""
     display: block
