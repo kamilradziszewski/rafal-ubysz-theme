@@ -2,21 +2,25 @@
 
 {% block content %}
 	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}} row align-center" id="post-{{post.ID}}">
+    <article class="post-type-{{post.post_type}} row align-center"
+             id="post-{{post.ID}}">
 			<section class="article-content columns small-11 medium-8 large-9">
 				<h1 class="article-h1">{{post.title}}</h1>
 				<div class="article-body">
 					<div class="contact-info">
 						<h2>Rafał Ubysz</h2>
-						<a class="phone" href="tel:+48{{ post.telephone|replace({' ':''}) }}">
+            <a class="phone"
+               href="tel:+48{{ post.telephone|replace({' ':''}) }}">
 							<svg>
-								<use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-phone"></use>
+                <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-phone">
+                </use>
 							</svg>
 							{{ post.telephone }}
 						</a>
 						<a class="email" href="mailto:{{ post.email }}">
 							<svg>
-								<use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-email"></use>
+                <use xlink:href="{{ theme.link }}/static/dist/img/icons-sprite.svg#icon-email">
+                </use>
 							</svg>
 							{{ post.email }}
 						</a>

@@ -6,12 +6,15 @@
   {% else %}
     <div class="columns">
       <div class="acf-map">
-        <div class="marker" data-lat="{{ address.map['lat'] }}" data-lng="{{ address.map['lng'] }}"></div>
+        <div class="marker"
+             data-lat="{{ address.map['lat'] }}"
+             data-lng="{{ address.map['lng'] }}">
+        </div>
       </div>
   {% endif %}
     <div class="address">
       <h3 class="address-title">{{ address.title }}</h3>
-      
+
       {% if address.additional_info %}
         <p>{{ address.additional_info }}</p>
       {% endif %}
@@ -19,15 +22,28 @@
       <p>{{ address.street }}<p>
 
       {% if address.telephone_1 %}
-        <p><a class="address-telephone" href="tel:+48{{ address.telephone_1|replace({' ':''}) }}">Tel. {{ address.telephone_1 }}</a></p>
+        <p>
+          <a class="address-telephone"
+             href="tel:+48{{ address.telephone_1|replace({' ':''}) }}">
+            Tel. {{ address.telephone_1 }}
+          </a>
+        </p>
       {% endif %}
 
       {% if address.telephone_2 %}
-        <p><a class="address-telephone" href="tel:+48{{ address.telephone_2|replace({' ':''}) }}">Tel. {{ address.telephone_2 }}</a></p>
+        <p>
+          <a class="address-telephone"
+             href="tel:+48{{ address.telephone_2|replace({' ':''}) }}">
+            Tel. {{ address.telephone_2 }}
+          </a>
+        </p>
       {% endif %}
 
       {% if address.webpage %}
-        <a class="address-webpage" href="{% if '://' not in address.webpage %}https://{% endif %}{{ address.webpage }}" target="_blank" class="webpage">
+        <a class="address-webpage"
+           href="{% if '://' not in address.webpage %}https://{% endif %}{{ address.webpage }}"
+           target="_blank"
+           class="webpage">
           {% if address.webpage matches '{^http://|^https://}' %}
             {{ address.webpage|replace({'http://':'', 'https://':''}) }}
           {% else %}
@@ -48,5 +64,4 @@
       {% endif %}
     </div>
   </div>
-  
 {% endfor %}
